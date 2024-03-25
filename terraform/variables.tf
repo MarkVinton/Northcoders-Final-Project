@@ -16,4 +16,7 @@ variable "azs" {
 variable "ami" {
   type = string
 }
-
+variable "cluster_name" {
+  type = string
+  description = "Name for the EKS cluster"
+}
