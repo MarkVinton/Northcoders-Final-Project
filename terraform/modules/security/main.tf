@@ -6,6 +6,7 @@ resource "aws_security_group" "allow_http" {
   vpc_id      = var.vpc_id
 }
 
+
 resource "aws_security_group_rule" "allow_http" {
   type              = "ingress"
   from_port         = 80
@@ -16,6 +17,12 @@ resource "aws_security_group_rule" "allow_http" {
   security_group_id = aws_security_group.allow_http.id
 }
 
+resource "aws_security_group" "allow_http_3000" {
+  name        = "allow_http_3000"
+  description = "Allow http inbound traffic"
+  vpc_id      = var.vpc_id
+}
+
 resource "aws_security_group_rule" "allow_http_3000" {
   type             = "ingress"
   from_port        = 3000
@@ -23,7 +30,7 @@ resource "aws_security_group_rule" "allow_http_3000" {
   protocol         = "tcp"
   cidr_blocks      = ["0.0.0.0/0"]
   ipv6_cidr_blocks = ["::/0"]
-  security_group_id = aws_security_group.allow_HTTP.id
+  security_group_id = aws_security_group.allow_http_3000.id
 }
 resource "aws_security_group" "allow_https" {
   name        = "allow_https"
@@ -70,6 +77,6 @@ resource "aws_security_group_rule" "allow_ssh" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = [var.allowed_ssh_ip]
+  cidr_blocks       = ["0.0.0.0/0"] 
   security_group_id = aws_security_group.allow_ssh.id
 }
