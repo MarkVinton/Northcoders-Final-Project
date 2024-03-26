@@ -95,7 +95,7 @@ resource "aws_security_group_rule" "rds_database_access" {
   to_port           = 5432
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"] 
-  security_group_id = aws_security_group.rds_database_access.id
+  security_group_id = aws_security_group.allow_http.id
 }
 
 # Security group for ALB 
