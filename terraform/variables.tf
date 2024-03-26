@@ -20,3 +20,8 @@ variable "cluster_name" {
   type = string
   description = "Name for the EKS cluster"
 }
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "eu-west-2"
+}
