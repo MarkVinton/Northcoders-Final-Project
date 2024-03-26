@@ -48,6 +48,7 @@ resource "aws_security_group_rule" "allow_https" {
   security_group_id = aws_security_group.allow_https.id
 }
 
+# egress:
 resource "aws_security_group" "allow_egress" {
   name        = "allow_egress"
   description = "Allow egress inbound traffic"
@@ -77,8 +78,24 @@ resource "aws_security_group_rule" "allow_ssh" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"] 
+  cidr_blocks       = ["0.0.0.0/0"] #lookatpersonalip
   security_group_id = aws_security_group.allow_ssh.id
+}
+
+# rds rules: 
+resource "aws_security_group" "rds_database_access" {
+  name        = "rds_database_access"
+  description = "Allow rds database access from servers"
+  vpc_id      = var.vpc_id
+}
+
+resource "aws_security_group_rule" "rds_database_access" {
+  type              = "ingress"
+  from_port         = 5432
+  to_port           = 5432
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"] 
+  security_group_id = aws_security_group.rds_database_access.id
 }
 
 # Security group for ALB 
