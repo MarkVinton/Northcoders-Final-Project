@@ -17,11 +17,43 @@ variable "ami" {
   type = string
 }
 variable "cluster_name" {
-  type = string
+  type        = string
   description = "Name for the EKS cluster"
 }
+
+variable "engine" {
+  description = "Database engine"
+  type        = string
+}
+
+variable "engine_version" {
+  type = string
+}
+
+variable "db_name" {
+  description = "Database name"
+  type        = string
+}
+
+variable "db_master_username" {
+  description = "Database username"
+  type        = string
+}
+
+variable "db_master_password" {
+  description = "Database password"
+  type        = string
+  sensitive   = true
+}
+
+variable "backup_retention_days" {
+  description = "Number of days to retain automated backups"
+  type        = number
+}
+
 variable "region" {
   description = "AWS region"
   type        = string
   default     = "eu-west-2"
 }
+
