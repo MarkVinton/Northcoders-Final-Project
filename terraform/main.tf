@@ -10,12 +10,14 @@ module "vpc" {
 module "security" {
   source = "./modules/security"
   vpc_id = module.vpc.vpc_id
+  cluster_name = var.cluster_name
 }
 
 module "eks" {
   source          = "./modules/EKS"
   vpc_id          = module.vpc.vpc_id
   private_subnets = module.vpc.private_subnets_ids
+
   cluster_name    = var.cluster_name
 }
 
@@ -30,4 +32,15 @@ module "rds" {
   private_subnets       = var.private_subnets
   security_group_ids    = module.security.database_security_group_id
   backup_retention_days = var.backup_retention_days
+  public_subnets = var.public_subnets
+  cluster_name = var.cluster_name
+
+}
+
+module "alb" {
+  source             = "./modules/alb"
+  cluster_name       = var.cluster_name
+  vpc_id             = module.vpc.vpc_id
+  public_subnets     = module.vpc.public_subnets_ids
+  alb_security_group_id = module.security.alb_security_group_id 
 }

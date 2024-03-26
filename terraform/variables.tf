@@ -21,7 +21,6 @@ variable "cluster_name" {
   description = "Name for the EKS cluster"
 }
 
-
 variable "engine" {
   description = "Database engine"
   type        = string
@@ -51,3 +50,10 @@ variable "backup_retention_days" {
   description = "Number of days to retain automated backups"
   type        = number
 }
+
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "eu-west-2"
+}
+
