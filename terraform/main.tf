@@ -21,10 +21,11 @@ module "eks" {
   cluster_name    = var.cluster_name
 }
 
-module "ecr" {
-  source = "./modules/ECR"
-  aws_region = var.aws_region
-}
+# Temporary module for ECR images without pipelines (hardcoded)
+# module "ecr" {
+#   source = "./modules/ECR"
+#   aws_region = var.aws_region
+# }
 
 
 module "rds" {
@@ -40,7 +41,7 @@ module "rds" {
 }
 
 module "alb" {
-  source             = "./modules/alb"
+  source             = "./modules/ALB"
   cluster_name       = var.cluster_name
   vpc_id             = module.vpc.vpc_id
   public_subnets     = module.vpc.public_subnets_ids
