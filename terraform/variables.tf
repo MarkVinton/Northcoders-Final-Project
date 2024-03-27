@@ -16,10 +16,10 @@ variable "azs" {
 variable "ami" {
   type = string
 }
-variable "cluster_name" {
-  type        = string
-  description = "Name for the EKS cluster"
-}
+# variable "cluster_name" {
+#   type        = string
+#   description = "Name for the EKS cluster"
+# }
 
 
 variable "engine" {
@@ -45,9 +45,4 @@ variable "db_master_password" {
   description = "Database password"
   type        = string
   sensitive   = true
-}
-
-variable "backup_retention_days" {
-  description = "Number of days to retain automated backups"
-  type        = number
 }

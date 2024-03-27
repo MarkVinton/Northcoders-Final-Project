@@ -27,7 +27,7 @@ variable "db_master_password" {
   sensitive   = true  
 }
 
-variable "private_subnets" {
+variable "subnet_ids" {
   type        = list(string)
   description = "A list of the CIDR ranges required for the private subnets"
 }
@@ -35,9 +35,4 @@ variable "private_subnets" {
 variable "security_group_ids" {
   description = "IDs of security groups to attach to RDS"
   type        = list(string)
-}
-
-variable "backup_retention_days" {
-  description = "Number of days to retain automated backups"
-  type        = number
 }
