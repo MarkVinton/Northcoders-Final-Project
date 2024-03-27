@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: markvinton/frontend:1.0.3
+        image: markvinton/frontend:1.0.4
         resources:
           limits:
             memory: "128Mi"
@@ -22,5 +22,5 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: DATABASE_URL
-          value: tbd
+          - name: VITE_API_BASE_URL
+            value: "a82114e23bc584941b0c9dd36ca3cab5-483656580.eu-west-2.elb.amazonaws.com"

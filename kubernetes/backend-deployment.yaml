@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -13,10 +14,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: markvinton/backend:1.0.3
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: markvinton/backend:1.0.4
         ports:
         - containerPort: 8080
