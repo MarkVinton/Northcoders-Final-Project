@@ -18,3 +18,9 @@ module "eks" {
   private_subnets = module.vpc.private_subnets_ids
   cluster_name = var.cluster_name
 }
+
+module "ecr" {
+  source = "./modules/ECR"
+  aws_region = var.aws_region
+}
+

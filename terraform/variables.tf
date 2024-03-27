@@ -20,3 +20,7 @@ variable "cluster_name" {
   type = string
   description = "Name for the EKS cluster"
 }
+
+variable aws_region {
+    type = string
+}

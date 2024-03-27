@@ -3,3 +3,4 @@ private_subnets = ["10.0.8.0/24", "10.0.9.0/24", "10.0.10.0/24"]
 azs = ["eu-west-2a","eu-west-2b","eu-west-2c"]
 ami = "ami-0e5f882be1900e43b"
 cluster_name = "team-project-cluster"
+aws_region = "eu-west-2"
