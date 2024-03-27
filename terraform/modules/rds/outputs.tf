@@ -1,3 +1,3 @@
 output "db_instance_endpoint" {
-  value       = aws_db_instance.myrds.endpoint
+  value       = aws_db_instance.dbinstance.endpoint
 }
