@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: markvinton/frontend:1.0.0
+        image: markvinton/frontend:1.0.3
         resources:
           limits:
             memory: "128Mi"
