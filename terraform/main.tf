@@ -21,11 +21,10 @@ module "eks" {
   cluster_name    = var.cluster_name
 }
 
-# Temporary module for ECR images without pipelines (hardcoded)
-# module "ecr" {
-#   source = "./modules/ECR"
-#   aws_region = var.aws_region
-# }
+module "ecr" {
+  source = "./modules/ECR"
+  aws_region = var.aws_region
+}
 
 
 module "rds" {
