@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: public.ecr.aws/m0z9x0c0/team-ecr-repository-frontend:1.0.5
+        image: markvinton/frontend:1.0.8
         resources:
           limits:
             memory: "128Mi"
@@ -23,12 +23,4 @@ spec:
         - containerPort: 80
         env:
           - name: VITE_API_BASE_URL
-            value: "adc5ea691884845899e16b79143f7926-130469647.eu-west-2.elb.amazonaws.com:8080"
-          - name: DATABASE_USER
-            value: "rymp_username"
-          - name: DATABASE_PASS
-            value: "rymp_password"
-          - name: DATABASE_HOST
-            value: "dbinstance.ctu6yyemsckt.eu-west-2.rds.amazonaws.com"
-          - name: DATABASE_NAME
-            value: "dbinstance"  
+            value: "ab992b2ff232344278b2084f3cb8407f-1152698979.eu-west-2.elb.amazonaws.com:8080"
