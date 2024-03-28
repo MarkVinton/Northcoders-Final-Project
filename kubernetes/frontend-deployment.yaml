@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 891376936320.dkr.ecr.eu-west-2.amazonaws.com/team-ecr-repository-backend:latest
+        image: 891376936320.dkr.ecr.eu-west-2.amazonaws.com/team-ecr-repository-frontend:latest
         ports:
         - containerPort: 8080
         env:
