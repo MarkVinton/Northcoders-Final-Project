@@ -21,12 +21,6 @@ module "eks" {
   cluster_name    = var.cluster_name
 }
 
-module "ecr" {
-  source = "./modules/ECR"
-  aws_region = var.aws_region
-}
-
-
 module "rds" {
   source             = "./modules/rds"
   engine             = var.engine
