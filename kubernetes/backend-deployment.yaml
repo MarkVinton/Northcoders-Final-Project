@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: markvinton/backend:1.0.4
+        image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:1.0.7
         ports:
         - containerPort: 8080
