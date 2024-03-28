@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: 891376936320.dkr.ecr.eu-west-2.amazonaws.com/team-ecr-repository-frontend:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DATABASE_USER
+          value: "rymp_username"
+        - name: DATABASE_PASS
+          value: "rymp_password"
+        - name: DATABASE_HOST
+          value: "dbinstance.czyc0o06wdkv.eu-west-2.rds.amazonaws.com"
+        - name: DATABASE_NAME
+          value: "rymp_database"
