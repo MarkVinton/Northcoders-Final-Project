@@ -23,4 +23,9 @@ spec:
         - name: SPRING_DATASOURCE_USERNAME
           value: "postgres"
         - name: SPRING_DATASOURCE_PASSWORD
+<<<<<<< HEAD
           value: "rymp_password"
+=======
+          value: "rymp_password"
+
+>>>>>>> fc5ebcbb8c0039a44393f1bdb8418489b17bd31b
