@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -13,10 +14,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: markvinton/backend:1.0.3
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:1.0.7
         ports:
         - containerPort: 8080
