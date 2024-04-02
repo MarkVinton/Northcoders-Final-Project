@@ -1,8 +1,0 @@
-global:
-  scrape_interval: 15s
-
-scrape_configs:
-  - job_name: 'backend'
-    metrics_path: /actuator/prometheus
-    static_configs:
-      - targets: ['ae979036824634c3db8b6fe237d0f07c-388178154.eu-west-2.elb.amazonaws.com:8080']
