@@ -8,8 +8,8 @@ module "vpc" {
 }
 
 module "security" {
-  source = "./modules/security"
-  vpc_id = module.vpc.vpc_id
+  source       = "./modules/security"
+  vpc_id       = module.vpc.vpc_id
   cluster_name = var.cluster_name
 }
 
@@ -17,9 +17,15 @@ module "eks" {
   source          = "./modules/EKS"
   vpc_id          = module.vpc.vpc_id
   private_subnets = module.vpc.private_subnets_ids
-  public_subnets = var.public_subnets
+  public_subnets  = var.public_subnets
   cluster_name    = var.cluster_name
 }
+
+module "ecr" {
+  source     = "./modules/ECR"
+  aws_region = var.aws_region
+}
+
 
 module "rds" {
   source             = "./modules/rds"
@@ -34,9 +40,9 @@ module "rds" {
 }
 
 module "alb" {
-  source             = "./modules/ALB"
-  cluster_name       = var.cluster_name
-  vpc_id             = module.vpc.vpc_id
-  public_subnets     = module.vpc.public_subnets_ids
-  alb_security_group_id = module.security.alb_security_group_id 
+  source                = "./modules/ALB"
+  cluster_name          = var.cluster_name
+  vpc_id                = module.vpc.vpc_id
+  public_subnets        = module.vpc.public_subnets_ids
+  alb_security_group_id = module.security.alb_security_group_id
 }
