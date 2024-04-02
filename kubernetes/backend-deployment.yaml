@@ -14,6 +14,14 @@ spec:
     spec:
       containers:
       - name: backend
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:1.0.7
+        ports:
+        - containerPort: 8080
+=======
+>>>>>>> dd5ecbb
         image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:latest
         ports:
         - containerPort: 8080
@@ -25,3 +33,7 @@ spec:
         - name: SPRING_DATASOURCE_PASSWORD
           value: "rymp_password"
 
+<<<<<<< HEAD
+=======
+>>>>>>> e05eaa7 (deployment.yaml amended)
+>>>>>>> dd5ecbb
