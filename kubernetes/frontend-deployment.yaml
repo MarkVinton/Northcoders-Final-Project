@@ -15,6 +15,10 @@ spec:
       containers:
       - name: frontend
         image: public.ecr.aws/m0z9x0c0/team-ecr-repository-frontend:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 80
         env:
