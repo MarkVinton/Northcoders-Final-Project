@@ -14,15 +14,14 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 891376936320.dkr.ecr.eu-west-2.amazonaws.com/team-ecr-repository-backend:latest
+        image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:latest
         ports:
         - containerPort: 8080
         env:
-        - name: DATABASE_USER
-          value: "rymp_username"
-        - name: DATABASE_PASS
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:postgresql://dbinstance.czyc0o06wdkv.eu-west-2.rds.amazonaws.com:5432/rymp_database"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "postgres"
+        - name: SPRING_DATASOURCE_PASSWORD
           value: "rymp_password"
-        - name: DATABASE_HOST
-          value: "dbinstance.czyc0o06wdkv.eu-west-2.rds.amazonaws.com"
-        - name: DATABASE_NAME
-          value: "rymp_database"
+
