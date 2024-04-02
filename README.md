@@ -26,3 +26,16 @@ Remember to replace 'eu-west-2' with your region and 'rymp-eks-cluster' with the
 ```
 aws eks --region eu-west-2 update-kubeconfig --name rymp-eks-cluster
 ```
+
+Now that terraform infrastructure is created we can move on to the deployment of our frontend and backend applications.
+
+Firstly with backend there are 3 environment variables that are required to link the backend application to the RDS. These are 
+```
+- name: SPRING_DATASOURCE_URL
+          value: "jdbc:postgresql://YOUR_RDS_DNS:5432/rymp_database"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "YOUR_RDS_USERNAME"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "YOUR_RDS_PASSWORD"
+```
+We recommend using 'postgres' for the RDS username as this prevents future issues down the line.
