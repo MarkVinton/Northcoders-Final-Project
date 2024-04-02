@@ -8,5 +8,4 @@ engine_version        = "14.9"
 db_name               = "rymp_database"
 db_master_username    = "postgres"
 db_master_password    = "rymp_password"
-backup_retention_days = 10
 aws_region            = "eu-west-2"
