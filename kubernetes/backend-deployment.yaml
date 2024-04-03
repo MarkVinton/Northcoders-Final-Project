@@ -24,4 +24,3 @@ spec:
           value: "postgres"
         - name: SPRING_DATASOURCE_PASSWORD
           value: "rymp_password"
-

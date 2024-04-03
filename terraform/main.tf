@@ -13,19 +13,13 @@ module "security" {
   cluster_name = var.cluster_name
 }
 
-module "eks" {
-  source          = "./modules/EKS"
-  vpc_id          = module.vpc.vpc_id
-  private_subnets = module.vpc.private_subnets_ids
-  public_subnets  = var.public_subnets
-  cluster_name    = var.cluster_name
-}
-
-module "ecr" {
-  source     = "./modules/ECR"
-  aws_region = var.aws_region
-}
-
+# module "eks" {
+#   source          = "./modules/EKS"
+#   vpc_id          = module.vpc.vpc_id
+#   private_subnets = module.vpc.private_subnets_ids
+#   public_subnets  = var.public_subnets
+#   cluster_name    = var.cluster_name
+# }
 
 module "rds" {
   source             = "./modules/rds"

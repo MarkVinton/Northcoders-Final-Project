@@ -46,11 +46,6 @@ variable "db_master_password" {
   sensitive   = true
 }
 
-variable "backup_retention_days" {
-  description = "Number of days to retain automated backups"
-  type        = number
-}
-
 variable "region" {
   description = "AWS region"
   type        = string
