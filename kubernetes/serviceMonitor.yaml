@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: backend-85fbcfcf96-crggt
+      app: backend-85fbcfcf96-scfwp
   endpoints:
     - interval: 10s
       port: metrics-port
