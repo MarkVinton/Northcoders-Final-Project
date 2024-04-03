@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/part-of: backend-85fbcfcf96-qf8d9
+      app: backend
   endpoints:
     - interval: 10s
       port: metrics-port
