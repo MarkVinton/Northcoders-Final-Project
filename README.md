@@ -49,8 +49,30 @@ Here you will add your publicly available Load Balancer DNS which will connect t
 
 Now that all the deployment files are ready to be used
 
-INSERT EITHER MANUAL DEPLOYMENT INSTRUCTIONS OR CI/CD
+To deploy them use the command 
+```
+kubectl apply -f YOUR_FILE_NAME
+```
+
+We have future plans to implement continuos deployment
 
 Once you have deployed the 2 applications to your EKS cluster you should be able to access the frontend via the load balancer created via the service yaml. This can be acquired either by using the command ```kubectl get services``` or logging into your AWS console and finding the load balancer DNS displayed on your account.
 
+![Alt text](frontend.png)
+
+At this point you should also be able to see the connections being made to your RDS instance on the AWS Console.
+
+![Alt text](rds.png)
+
 You should then be able to sign-up or login if you have already made an account and also alter the details of any users that have signed up or even remove them all together.
+
+If you have followed all of these steps correctly you should be able access this screen which shows all the users in your database.
+![Alt text](image.png)
+
+If you can reach this screen congratulations you're frontend and backend are all linked up and communicating with your database to create a fully fucntioning application!
+
+
+
+
+
+
