@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: backend-85fbcfcf96-scfwp
+      app.kubernetes.io/part-of: nc-learners
   endpoints:
     - interval: 10s
       port: metrics-port

@@ -17,13 +17,6 @@ spec:
         image: public.ecr.aws/m0z9x0c0/team-ecr-repository-backend:latest
         ports:
         - containerPort: 8080
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:postgresql://dbinstance.czyc0o06wdkv.eu-west-2.rds.amazonaws.com:5432/rymp_database"
