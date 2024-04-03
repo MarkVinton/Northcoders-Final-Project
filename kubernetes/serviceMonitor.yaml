@@ -4,6 +4,9 @@ metadata:
   name: nc-learners-monitor
   namespace: default
 spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: backend-85fbcfcf96-qf8d9
   endpoints:
     - interval: 10s
       port: metrics-port
@@ -11,6 +14,4 @@ spec:
   namespaceSelector:
     matchNames:
       - default
-  selector:
-    matchLabels:
-      app.kubernetes.io/part-of: nc-learners
+  
