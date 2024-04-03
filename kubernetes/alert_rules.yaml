@@ -1,0 +1,16 @@
+groups:
+- name: cat_server_alerts
+  rules:
+  - alert: MrJimBusinessIsHungry
+    expr: hunger_level > 80 
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Mr Jim Business is getting hungry, feed him!"
+  - alert: MrJimBusinessNeedsAttention
+    expr: head_pats_counter < 5 for 10m
+    labels: 
+      severity: info
+    annotations:
+      summary: "Mr Jim Business might be feeling lonely"  
