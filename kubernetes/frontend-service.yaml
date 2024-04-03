@@ -14,5 +14,5 @@ spec:
     - protocol: TCP
       name: metrics-port
       port: 80
-      targetPort: 80
+      targetPort: 3000
   type: LoadBalancer
