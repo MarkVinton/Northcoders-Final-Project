@@ -62,7 +62,7 @@ Once you have deployed the 2 applications to your EKS cluster you should be able
 
 At this point you should also be able to see the connections being made to your RDS instance on the AWS Console.
 
-![Alt text](rds.png)
+![Alt text](image-1.png)
 
 You should then be able to sign-up or login if you have already made an account and also alter the details of any users that have signed up or even remove them all together.
 
