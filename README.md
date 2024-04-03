@@ -38,4 +38,19 @@ Firstly with backend there are 3 environment variables that are required to link
         - name: SPRING_DATASOURCE_PASSWORD
           value: "YOUR_RDS_PASSWORD"
 ```
-We recommend using 'postgres' for the RDS username as this prevents future issues down the line.
+Repalce the values with your own however we recommend using 'postgres' for the RDS username as this prevents future issues down the line. These values will be injected into the backend application yaml file to set up the connection with the RDS instance and allow them to communicate.
+
+Moving on to the frontend deployment there is only 1 environemnt variable to inject which is 
+```
+- name: VITE_API_BASE_URL
+          value: "YOUR_LB_DNS:8080"
+```
+Here you will add your publicly available Load Balancer DNS which will connect the frontend to the backend allowing users to login/signup using the frontend application.
+
+Now that all the deployment files are ready to be used
+
+INSERT EITHER MANUAL DEPLOYMENT INSTRUCTIONS OR CI/CD
+
+Once you have deployed the 2 applications to your EKS cluster you should be able to access the frontend via the load balancer created via the service yaml. This can be acquired either by using the command ```kubectl get services``` or logging into your AWS console and finding the load balancer DNS displayed on your account.
+
+You should then be able to sign-up or login if you have already made an account and also alter the details of any users that have signed up or even remove them all together.
